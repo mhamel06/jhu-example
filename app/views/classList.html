@@ -1,0 +1,28 @@
+<div class="row marketing">
+    <ul class="list-group">
+        <li class='list-group-item'>
+            <div class="row">
+                <div class="col-md-3"><input ng-model="search.classNum" type="text" class="form-control"></input></div>
+                <div class="col-md-5"><input ng-model="search.title" type="text" class="form-control"></input></div>
+                <div class="col-md-2"><input ng-model="search.dayTimes" type="text" class="form-control"></input></div>
+                <div class="col-md-2"><input ng-model="search.instructor" type="text" class="form-control"></input></div>
+            </div>
+        </li>
+        <li class='list-group-item'>
+            <div class="row">
+                <div class="col-md-3"><strong>Class #</strong></div>
+                <div class="col-md-5"><strong>Title</strong></div>
+                <div class="col-md-2"><strong>Day-Times</strong></div>
+                <div class="col-md-2"><strong>Instructor</strong></div>
+            </div>
+        </li>
+        <li class='list-group-item class-listing' ng-repeat='class in classes | filter:search' ng-click='selectClass()'>
+            <div class="row class-row">
+                <div class="col-md-3">{{class.classNum}}</div>
+                <div class="col-md-5">{{class.title}}</div>
+                <div class="col-md-2">{{class.dayTimes}}</div>
+                <div class="col-md-2">{{class.instructor}}</div>
+            </div>
+        </li>
+    </ul>
+</div>

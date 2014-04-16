@@ -1,0 +1,30 @@
+<h1>{{topic.title}}</h1>
+<hr>
+<div class="row">
+    <div class='col-sm-2'>
+        <span>mhamel</span>
+    </div>
+    <div class="col-sm-10">
+        <div btf-markdown="topic.content"></div>
+    </div>
+</div>
+<div ng-repeat="r in topic.replies">
+    <div class="row">
+        <div class='col-sm-2'>
+            <span>{{r.user}}</span>
+        </div>
+        <div class="col-sm-10">
+            <div btf-markdown="r.content"></div>
+        </div>
+    </div>
+<hr>
+</div>
+
+<div class="row">
+    <div class="col-sm-10">
+        <textarea class="form-control" rows="3" ng-model='reply.content'></textarea>
+    </div>
+    <div class="col-sm-2">
+        <button ng-click="submitReply()" class="btn btn-info">Submit</button>
+    </div>
+</div>
