@@ -3,6 +3,13 @@
 angular.module('jhuApp').controller('classWallCtrl', function($scope, $http, $stateParams, $state){
     $scope.topics = [];
     $scope.class = $stateParams.class;
+    $scope.newTopic = {
+        show:true
+    }
+
+    $scope.createNewTopic = function(){
+        $scope.newTopic = {};
+    }
 
     $scope.postTopic = function(){
         var topic = {
@@ -19,6 +26,7 @@ angular.module('jhuApp').controller('classWallCtrl', function($scope, $http, $st
     };
 
     $http.get('/topics/').success(function(docs){
+
         $scope.topics = docs;
     });
 

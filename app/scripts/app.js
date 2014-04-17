@@ -8,12 +8,13 @@ angular.module('jhuApp', ['ngAnimate', 'ui.router', 'btford.markdown']).config(f
   // Now set up the states
   $stateProvider
     .state('main', {
-        templateUrl:'views/main.html'
+        templateUrl:'views/main.html',
+        controller: 'MainCtrl'
     })
     .state('main.classList', {
       url: "/",
       templateUrl: "views/classList.html",
-      controller: 'MainCtrl'
+      controller: 'ClassListCtrl'
   })
   .state('main.classWall', {
       url: '/classWall/:class',

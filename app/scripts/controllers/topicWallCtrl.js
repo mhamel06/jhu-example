@@ -3,6 +3,10 @@
 angular.module('jhuApp').controller('topicWallCtrl', function($scope, $http, $stateParams){
     $scope.topic = {};
     $scope.class = $stateParams.class;
+    $scope.params = {
+        class:$stateParams.class,
+        topic:$stateParams.topic
+    };
 
     $scope.submitReply = function(){
         var reply = {
@@ -22,7 +26,7 @@ angular.module('jhuApp').controller('topicWallCtrl', function($scope, $http, $st
 
 
     $http.get('/topics/' + $stateParams.topic).success(function(doc){
-        $scope.topic = doc;
+        $scope.topic = doc;    
     });
 
 

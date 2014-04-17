@@ -39,6 +39,15 @@ router.post('/', function(req, res){
 
 router.post('/reply', function(req, res){
     req.body.user = 'newUser';
+
+    var date = new Date();
+    var timestamp = Math.floor(date.getTime()/1000);
+    // Create a new ObjectID with a specific timestamp
+    var objectId = new mongodb.ObjectID(timestamp);
+
+    req.body._id = objectId;
+    req.body.timestamp = date.getTime();
+
     db.collection('topics').findAndModify(
         {"_id":mongodb.ObjectID(req.body.topicId)},
         {}, {$push:{replies:req.body}}, {},function(err, object){
@@ -46,7 +55,7 @@ router.post('/reply', function(req, res){
                 console.warn(err);
                 res.send(500, err);
             }
-
+            if(!object.replies) object.replies = [];
             object.replies.push(req.body)
             console.log(object);
             res.json(req.body);

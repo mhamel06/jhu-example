@@ -127,3 +127,20 @@ body {
 .class-row{
     cursor:pointer;
 }
+
+.reply-form.ng-hide-add,
+.reply-form.ng-hide-remove {
+  display:block!important;
+}
+
+.reply-form.ng-hide-add.ng-hide-add-active,
+.reply-form.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.reply-form.ng-hide {
+  height:0px;
+  opacity:0;
+  padding:0 10px;
+}

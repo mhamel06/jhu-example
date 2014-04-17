@@ -1,3 +1,10 @@
+<ol class="breadcrumb">
+  <li><a ui-sref="main.classList">Home</a></li>
+
+  <li><a ui-sref="main.classWall(params)">{{params.class}}</a></li>
+  <li class="active">{{params.topic}}</li>
+</ol>
+
 <h1>{{topic.title}}</h1>
 <hr>
 <div class="row">
@@ -8,6 +15,7 @@
         <div btf-markdown="topic.content"></div>
     </div>
 </div>
+<hr>
 <div ng-repeat="r in topic.replies">
     <div class="row">
         <div class='col-sm-2'>
@@ -21,7 +29,7 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-10">
+    <div class="col-sm-offset-2 col-sm-8">
         <textarea class="form-control" rows="3" ng-model='reply.content'></textarea>
     </div>
     <div class="col-sm-2">

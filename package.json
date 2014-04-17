@@ -9,8 +9,14 @@
     "cookie-parser": "~1.0.1",
     "body-parser": "~1.0.0",
     "debug": "~0.7.4",
-    "jade": "~1.3.0",
-    "mongodb": "^1.4.0"
+    "jade": "^1.3.1",
+    "mongodb": "^1.4.0",
+    "grunt-nodemon": "^0.2.1",
+    "browserid-verify": "^0.1.2",
+    "csurf": "^1.1.0",
+    "cookie-session": "^1.0.1",
+    "express-session": "^1.0.2",
+    "connect-redis": "^2.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
